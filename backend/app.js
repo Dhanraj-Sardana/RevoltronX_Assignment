@@ -1,6 +1,13 @@
 const express = require('express');
+const Router=require('./routes/blogRoute');
+const connectDb=require('./config/Mongodb');
+
+//coonecting databse
+connectDb();
 
 const app = express();
+
+app.use('/api',Router);
 
 const PORT = process.env.PORT || 3000;
 
