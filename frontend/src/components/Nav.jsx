@@ -17,8 +17,8 @@ export default function Nav() {
 
 
   <div className="flex items-center gap-4">
-    <button className="px-4 py-2 text-sm font-semibold text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition" onClick={()=>navigate('/login',{replace:true})}>Login</button>
-    <button className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded hover:bg-blue-700 transition" onClick={()=>navigate('/signin',{replace:true})}>Sign Up</button>
+    <button className="px-4 py-2 text-sm font-semibold text-blue-400 border border-blue-400 rounded hover:text-blue-600 hover:border-blue-600 transition" onClick={()=>navigate('/login',{replace:true})}>Login</button>
+    <button className="px-4 py-2 text-sm font-semibold text-black bg-blue-200 rounded hover:bg-blue-300 transition" onClick={()=>navigate('/signin',{replace:true})}>Sign Up</button>
   </div>
 </nav>
 

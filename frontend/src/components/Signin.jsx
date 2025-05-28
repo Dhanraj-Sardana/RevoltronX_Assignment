@@ -11,7 +11,7 @@ export default function Signin() {
   }
      const handleSub= async (data)=>{
         try {
-        const response=await fetch('http://localhost:3000/signin',{
+        const response=await fetch('http://localhost:3000/auth/signin',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -24,11 +24,14 @@ export default function Signin() {
         })
     
       if(response.status===200){
-        navigate('/home',{replace:true})
+        navigate('/',{replace:true})
         setFlag(false)
       }
       if(response.status===409){
         setFlag(true)     
+      }
+      if(response.status===500){
+        return (<div className="text-red-600 font-semibold bg-red-100 border border-red-400 rounded-lg px-4 py-3 text-center shadow-md">Internal Server Error</div>)
       }
     } catch (err) {
       console.error("Error while sending data to server", err.message);
