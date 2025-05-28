@@ -1,10 +1,5 @@
 const mongoose = require('mongoose');
 const blogSchema = new mongoose.Schema({
-    id: {
-        type: Number,
-        required: true,
-        unique: true
-    },
     title: {
         type: String,
         required: true
@@ -20,8 +15,13 @@ const blogSchema = new mongoose.Schema({
         type: String,
         enum: ['draft', 'published'],
         default: 'draft'
-    }
+    },
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
 
-},{timestamps:true}
+}, { timestamps: true }
 )
-module.exports=mongoose.model('blogs',blogSchema);
+module.exports = mongoose.model('blogs', blogSchema);
