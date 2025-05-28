@@ -1,0 +1,26 @@
+import { useNavigate } from "react-router-dom"
+
+export default function Nav() {
+    const navigate=useNavigate();
+  return (
+    <nav className="bg-[#f5f8fa] shadow-md px-6 py-3 flex items-center justify-between">
+  
+  <div className="flex items-center flex-shrink-0">
+    <img src="Logo.jpeg" alt="Logo" className="h-14 w-auto object-contain" />
+  </div>
+
+  <div className="hidden md:flex gap-8 text-lg font-medium text-gray-700">
+    <a href="#" className="hover:text-blue-600 transition">Home</a>
+    <a href="#" className="hover:text-blue-600 transition">Contact Us</a>
+    <a href="#" className="hover:text-blue-600 transition">Blog</a>
+  </div>
+
+
+  <div className="flex items-center gap-4">
+    <button className="px-4 py-2 text-sm font-semibold text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition" onClick={()=>navigate('/login',{replace:true})}>Login</button>
+    <button className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded hover:bg-blue-700 transition" onClick={()=>navigate('/signin',{replace:true})}>Sign Up</button>
+  </div>
+</nav>
+
+  )
+}
