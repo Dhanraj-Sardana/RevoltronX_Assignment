@@ -14,7 +14,8 @@ export default function Login() {
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
+                credentials: 'include',
             })
             if (response.status === 200) {
 
@@ -28,7 +29,7 @@ export default function Login() {
             }
             if (response.status === 500) {
                 const d = await response.json();
-                return ( <div className='text-red-600 font-semibold bg-red-100 border border-red-400 rounded-lg px-4 py-3 text-center shadow-md'>{d.error}</div> );
+                return (<div className='text-red-600 font-semibold bg-red-100 border border-red-400 rounded-lg px-4 py-3 text-center shadow-md'>{d.error}</div>);
 
             }
         } catch (error) {

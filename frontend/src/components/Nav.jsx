@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-export default function Nav() {
+export default function Nav({userFlag}) {
     const navigate=useNavigate();
   return (
     <nav className="bg-[#f5f8fa] shadow-md px-6 py-3 flex items-center justify-between">
@@ -17,9 +17,10 @@ export default function Nav() {
 
 
   <div className="flex items-center gap-4">
-    <button className="px-4 py-2 text-sm font-semibold text-blue-400 border border-blue-400 rounded hover:text-blue-600 hover:border-blue-600 transition" onClick={()=>navigate('/login',{replace:true})}>Login</button>
-    <button className="px-4 py-2 text-sm font-semibold text-black bg-blue-200 rounded hover:bg-blue-300 transition" onClick={()=>navigate('/signin',{replace:true})}>Sign Up</button>
-  </div>
+  { userFlag ? <button className="px-4 py-2 text-sm font-semibold text-black bg-blue-200 rounded hover:bg-blue-300 transition" onClick={()=>navigate('/logout',{replace:true})}>Logout</button> : <><button className="px-4 py-2 text-sm font-semibold text-blue-400 border border-blue-400 rounded hover:text-blue-600 hover:border-blue-600 transition" onClick={()=>navigate('/login',{replace:true})}>Login</button>
+      <button className="px-4 py-2 text-sm font-semibold text-black bg-blue-200 rounded hover:bg-blue-300 transition" onClick={()=>navigate('/signin',{replace:true})}>Sign Up</button>
+      </>}
+      </div>
 </nav>
 
   )

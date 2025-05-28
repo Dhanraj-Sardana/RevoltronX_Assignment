@@ -10,6 +10,7 @@ useEffect( ()=>{
   const handleServerRes= async ()=>{
   try{
   setErrorFlag(false);
+  setUserFlag(false);
 const res=await fetch('http://localhost:3000/auth/home',{
   credentials:'include'
 });
@@ -49,9 +50,9 @@ handleServerRes();
  Error: {error}
 </div>
     :<>
-      <Nav />
+      <Nav userFlag={userFlag} />
       <div className="  flex flex-col justify-center items-center text-black">
-       { {username} &&<div>Home page {username}</div>}
+       <div >Home page {username}</div> 
       </div>
     </>
     }
