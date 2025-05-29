@@ -8,5 +8,5 @@ const payload=jwt.verify(token,process.env.KEY)
 
 if(!payload) return res.status(404)
     
-return res.status(200).json({userName:payload.userName});
+return res.status(200).json({userName:payload.userName,userID:payload.userID});
 }

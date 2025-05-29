@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
+
+
 export default function Login() {
     const { handleSubmit, register, formState: { errors } } = useForm();
     const [passFlag, setPassFlag] = useState(false);
     const [flag, setFlag] = useState(false);
     const navigate = useNavigate();
-
     const handleSub = async (data) => {
         try {
             const response = await fetch('http://localhost:3000/auth/login', {
@@ -18,8 +19,8 @@ export default function Login() {
                 credentials: 'include',
             })
             if (response.status === 200) {
+                window.location.href = '/';
 
-                navigate('/', { replace: true })
             }
             if (response.status === 401) {
                 setPassFlag(true);

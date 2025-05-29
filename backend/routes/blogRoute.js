@@ -1,7 +1,8 @@
 const express=require('express');
-const {home}=require('../controllers/Blog_Editor_Page');
+const {save_draft}=require('../controllers/save-draft');
+const {publish}=require('../controllers/Publish');
 const Router=express.Router();
 
-Router.get('/',home);     
-
+Router.post('/save-draft',save_draft);     
+Router.post('/publish',publish);
 module.exports=Router;

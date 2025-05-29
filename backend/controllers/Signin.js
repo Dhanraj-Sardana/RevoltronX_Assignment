@@ -13,9 +13,8 @@ exports.signin = async (req, res) => {
                 if (error) res.status(500).send(error);
                 const user = new User({ name, email, password: hash });
                 await user.save();
-
-                
-                const token = jwt.sign({ email: email,userName:name }, process.env.KEY, { expiresIn: '1h' });
+    
+                const token = jwt.sign({ email: email,userName:name,userID:user._id }, process.env.KEY, { expiresIn: '1h' });
                 
                 
                 res.cookie('token',token,{

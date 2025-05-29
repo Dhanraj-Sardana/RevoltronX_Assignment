@@ -10,9 +10,10 @@ export default function Nav({userFlag}) {
   </div>
 
   <div className="hidden md:flex gap-8 text-lg font-medium text-gray-700">
-    <a href="#" className="hover:text-blue-600 transition">Home</a>
-    <a href="#" className="hover:text-blue-600 transition">Contact Us</a>
-    <a href="#" className="hover:text-blue-600 transition">Blog</a>
+   <button onClick={() => navigate('/')} className="hover:text-blue-600 transition">Home</button>
+  <button onClick={() => navigate('/blog')} className="hover:text-blue-600 transition">Blog</button>
+  <button onClick={() => navigate('/contact')} className="hover:text-blue-600 transition">Contact Us</button>
+    
   </div>
 
 

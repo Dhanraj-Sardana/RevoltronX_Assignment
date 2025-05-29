@@ -10,11 +10,12 @@ exports.login = async (req, res) => {
         }
         const userpassword = user.password;
         const userName = user.name;
+        const userID=user._id;
 
         bcrypt.compare(password, userpassword, (err, result) => {
             if (err) return res.status(500).json({ error: error.message });
             if (result) {
-                const token = jwt.sign({ email: email, userName: userName }, process.env.KEY, { expiresIn: '1h' });
+                const token = jwt.sign({ email: email, userName: userName,userID:userID }, process.env.KEY, { expiresIn: '1h' });
 
                 res.cookie('token', token, {
                     httpOnly: true,
