@@ -1,7 +1,7 @@
-"""##  System Design
+##  System Design
 
 The backend is structured to ensure separation of concerns, scalability, and ease of maintenance:
-
+```
 backend/
 ├── config/                   # Configuration files
 │   └── Mongodb.js            # MongoDB connection setup
@@ -56,4 +56,4 @@ frontend/
 ├── index.html                # Base HTML file
 ├── package.json              # Project metadata and dependencies
 └── vite.config.js            # Vite configuration
-"""
+```
