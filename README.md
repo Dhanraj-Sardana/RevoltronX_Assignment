@@ -1,6 +1,28 @@
+##  Features
+
+###  User Authentication
+- Secure login and signup using **JWT-based authentication**.
+- Session persistence with `httpOnly` cookies for enhanced security.
+
+###  Blog Editor
+- **Save as Draft**: Allows saving work in progress without publishing.
+- **Publish Button**: Instantly publish your blog to the public view.
+- **Auto-Save Draft**:
+  - Saves automatically every 30 seconds.
+  - Also triggers save if the user stops typing for 5 seconds.
+- **Edit Existing Blogs**:
+  - Update both drafts and published posts.
+  - Prefilled form allows seamless editing.
+
+### Blog Management
+- **List All Blogs**:
+  - Blogs are categorized as:
+    -  Published
+    -  Drafts
+ 
 ##  System Design
 
-The backend is structured to ensure separation of concerns, scalability, and ease of maintenance:
+The backend and frontend is structured to ensure separation of concerns, scalability, and ease of maintenance:
 ```
 backend/
 ├── config/                   # Configuration files
@@ -56,4 +78,16 @@ frontend/
 ├── index.html                # Base HTML file
 ├── package.json              # Project metadata and dependencies
 └── vite.config.js            # Vite configuration
+```
+
+##  Tech Stack
+```
+
+| Frontend               | Backend          | Other                                    |
+|------------------------|------------------|------------------------------------------|
+| React.js (Vite)        | Node.js          | JWT                                      |
+| Tailwind CSS           | Express.js       | bcrypt                                   |
+| react router dom       | MongoDB/Mongoose | Auto-save logic (Debounce + setInterval) |
+| React Hook Form        | cors             | crypto                                   |
+| lodash,react-hot-toast | jsonwebtoken     | cookie-parser,dotenv                     |
 ```
