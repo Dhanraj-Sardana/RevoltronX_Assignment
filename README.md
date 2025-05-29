@@ -1,3 +1,8 @@
+#  BLOGRITHM
+
+A full-stack blog management application with rich editing features, real-time auto-save, and secure authentication using JWT.
+
+
 ##  Features
 
 ###  User Authentication
