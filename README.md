@@ -1,4 +1,4 @@
-##  System Design
+"""##  System Design
 
 The backend is structured to ensure separation of concerns, scalability, and ease of maintenance:
 
@@ -56,3 +56,4 @@ frontend/
 ├── index.html                # Base HTML file
 ├── package.json              # Project metadata and dependencies
 └── vite.config.js            # Vite configuration
+"""
